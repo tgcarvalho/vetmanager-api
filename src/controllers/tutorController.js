@@ -1,12 +1,14 @@
-class TutorController {
-    static async getAll(req, res){
-        try {
-            res.status(200)
-            .send({message: 'boas-vindas à API - recurso de tutor'})
-        } catch (error) {
-            
-        }
-    }
+const database = require("../models");
+const TutorService = require("../services/TutorService");
+const Controller = require("./controller");
+
+const tutorServices = new TutorService();
+
+class TutorController extends Controller {
+  constructor(){
+    super(tutorServices);
+  }
+
 }
 
-module.exports = TutorController
+module.exports = TutorController;
