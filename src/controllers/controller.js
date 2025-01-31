@@ -3,9 +3,9 @@ class Controller {
     this.entityService = entityService;
   }
 
-  async getAll(req, res) {
+  async getAll({body: parms}, res) {
     try {
-      const data = await this.entityService.fetchAll();
+      const data = await this.entityService.fetchAll(parms);
       res.status(200).send({ status: 200, data });
     } catch (error) {
       // erro
