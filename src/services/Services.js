@@ -9,7 +9,6 @@ class Services {
   async fetchAll(values) {
     let params = {};
     if (Object.keys(values).length !== 0) {
-      console.log('aqui', values)
       params = {
         where: {
           nome: {
