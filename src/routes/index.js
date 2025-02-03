@@ -1,11 +1,9 @@
 const express = require("express");
-const tutores = require("./tutoresRoutes.js")
-const pacientes = require("./pacientesRoutes.js")
+const tutoresRoutes = require("./tutoresRoutes.js")
 
 module.exports = app => {
     app.use(
         express.json(),
-        tutores,
-        pacientes
+        tutoresRoutes,
     );
 };
